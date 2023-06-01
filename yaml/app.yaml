@@ -6,8 +6,6 @@ metadata:
   labels: 
     app: demo
     run: demo
-  annotations:
-    argocd.argoproj.io/sync-options: '{"automated": true}'
 spec:
   containers:
     - image: gcr.io/k8s-k3s/demo:v1.0.0
@@ -15,3 +13,5 @@ spec:
       ports:
         - containerPort: 8000
           name: http
+  syncPolicy:
+    automated: {}
